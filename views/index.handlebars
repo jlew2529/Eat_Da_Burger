@@ -3,15 +3,18 @@
 
         <div class="col-md-12 text-center" id="top-bar">
             <!-- Remember to put an image -->
-            <img src="#" alt="burger">
+            <img src="../public/img/Burger.jpg" alt="burger">
             <h1>Eat-Da-Burger</h1>
         </div>
 
         <div class="col-md-6 text-center" class="task">
             <div class="row">
                 <!-- Put in data -->
+                {{#each burger_data}}
+                {{#unless this.devoured}}
                 <div class="col-md-9 text-center">
                     <!-- Put in data -->
+                    <pre>{{<this.id}}. {{this.burger_name}}</pre>
                 </div>
                 <div class="col-md-3 text-center">
                     <form class="devour-form button-size">
@@ -20,13 +23,19 @@
                     </form>
                 </div>
                 <!-- Put in data -->
+                {{/unless}}
+                {{/each}}
             </div>
         </div>
 
         <div class="col-md-6 text-center" class="task">
             <!-- Put in data -->
+            {{#each burger_data}}
+            {{#if this.devoured}}
             <input class="form-control" type="text" placeholder="<!-- Put in data -->" readonly>
             <!-- Put in data -->
+            {{/if}}
+            {{/each}}
         </div>
 
     </div>
