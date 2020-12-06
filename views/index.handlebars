@@ -32,7 +32,7 @@
             <!-- Put in data -->
             {{#each burger_data}}
             {{#if this.devoured}}
-            <input class="form-control" type="text" placeholder="<!-- Put in data -->" readonly>
+            <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
             <!-- Put in data -->
             {{/if}}
             {{/each}}
@@ -46,7 +46,7 @@
 
         <div class="col-md-12 text-center enter_section">
             <form action="/burgers/create" method="POST">
-                <input type="text" class="form-control" name="b_name" value="" id="enter_text">
+                <input type="text" class="form-control" name="burger_name" value="" id="enter_text">
                 <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
             </form>
             <p>Enter the type of burger you want to eat then CLICK the "Submit" button.</p>
