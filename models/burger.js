@@ -1,4 +1,3 @@
-const { createOne } = require("../config/orm");
 var orm = require("../config/orm");
 
 var burger = {
