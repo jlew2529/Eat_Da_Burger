@@ -9,14 +9,14 @@ router.get("/", function(req, res) {
 });
 
 router.get("/burgers", function(req, res) {
-    burger.selectAll(function(burgerData) {
+    burger.all(function(burgerData) {
         res.render("index", { burger_Data: burgerData });
     });
 });
 
 // post route
 router.post("/burgers/create", function(req, res) {
-    burger.createOne(req.body.burger_name, function(result) {
+    burger.create(req.body.burger_name, function(result) {
         console.log(result);
         res.redirect("/");
     });
@@ -24,7 +24,7 @@ router.post("/burgers/create", function(req, res) {
 
 // put route
 router.put("/burgers/:id", function(req, res) {
-    burger.updateOne(req.params.id, function(result) {
+    burger.update(req.params.id, function(result) {
         console.log(result);
         res.sendStatus(200);
     });
