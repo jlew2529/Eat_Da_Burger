@@ -3,12 +3,12 @@ var orm = require("../config/orm");
 
 var burger = {
     all: function(cb) {
-        orm.selectAll("burgers", function (res) {
+        orm.all("burgers", function (res) {
             cb(res);
         });
     },
     create: function(name, cb) {
-        orm.createOne("burgers", [
+        orm.create("burgers", [
             "burger_name", "devoured"
         ], [
             name, false
@@ -16,7 +16,7 @@ var burger = {
     },
     update: function(id, cb) {
         var condition = "id=" + id;
-        orm.updateOne("burgers", {
+        orm.update("burgers", {
             devoured: true
         }, condition, cb);
     }
